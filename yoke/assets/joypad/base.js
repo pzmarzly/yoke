@@ -726,9 +726,11 @@ function loadPad(filename) {
             }
         }
     };
-
+    history.pushState({}, 'gamepad', 'gamepad');
     head.appendChild(link);
 }
+
+window.onpopstate = function() { window.location.reload(); };
 
 var forceBar = document.getElementById('force');
 document.getElementById('menu').childNodes.forEach(function(child) {
